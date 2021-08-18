@@ -1,7 +1,6 @@
 variable "aws_region" {
   type        = string
   description = "AWS Region where resources should be created"
-  default     = "us-east-1"
 }
 
 variable "aws_cluster_name" {
