@@ -12,6 +12,7 @@ source set_env_variables.sh
 cd terraform
 
 terraform destroy -auto-approve \
+-var="aws_region=$AWS_CLUSTER_REGION" \
 -var="aws_cluster_name=$CONFIG_EKS_CLUSTER_NAME"
 
 cd ..
