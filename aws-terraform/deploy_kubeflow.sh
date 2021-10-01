@@ -46,6 +46,14 @@ kubectl get nodes --all-namespaces
 
 # # Pray
 # kfctl apply -V -f $CONFIG_FILE
+
+# install prometheus 
+# https://docs.aws.amazon.com/eks/latest/userguide/prometheus.html
+# kubectl create namespace prometheus
+# helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+# helm upgrade -i prometheus prometheus-community/prometheus \
+#     --namespace prometheus \
+#     --set alertmanager.persistentVolume.storageClass="gp2",server.persistentVolume.storageClass="gp2"
 echo "Waiting for all services to be ready (2 min)" && sleep 2m
 
 kubectl get service istio-ingressgateway -n istio-system
